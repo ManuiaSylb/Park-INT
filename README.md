@@ -10,7 +10,14 @@ Manuia Sylvestre-Baron
 ---
 
 ## 🎮 Description
-Un jeu réalisé en utilisant Unity, avec pour objectif de fournir une expérience immersive en 3D. Ce projet est encore en développement et contient divers éléments pour apprendre, expérimenter et créer un jeu engageant.
+**Park-INT** est un jeu de simulation de parking automobile développé dans le cadre de la **VAP HTI** au sein de **Télécom SudParis**. Le jeu met les joueurs au défi de garer une voiture tout en évitant divers obstacles et en respectant les contraintes de l'environnement. 
+
+Ce projet s'appuie sur des outils de pointe :
+- **Unity** pour le développement du jeu.  
+- **Blender** pour la modélisation 3D des véhicules et des environnements.  
+- **Adobe Illustrator** pour la création des éléments graphiques et des interfaces utilisateur.
+
+Park-INT vise à offrir une expérience immersive et engageante, tout en explorant des concepts techniques liés à la simulation, la physique des véhicules, et le design interactif.
 
 ---
 
