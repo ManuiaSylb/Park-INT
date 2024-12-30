@@ -14,7 +14,7 @@ Manuia Sylvestre-Baron
 
 Ce projet s'appuie sur des outils de pointe :
 - **Unity** pour le développement du jeu.  
-- **Blender** pour la modélisation 3D des véhicules et des environnements.  
+- **Blender** pour la modélisation 3D des environnements.  
 - **Adobe Illustrator** pour la création des éléments graphiques et des interfaces utilisateur.
 
 Park-INT vise à offrir une expérience immersive et engageante, tout en explorant des concepts techniques liés à la simulation, la physique des véhicules, et le design interactif.
