@@ -18,14 +18,8 @@ Un jeu réalisé en utilisant Unity, avec pour objectif de fournir une expérien
 Voici les assets utilisés dans ce projet :
 
 1. **[Nom de l'asset 1]**  
-   - **Auteur** : [Auteur de l'asset]  
-   - **Lien** : [URL de l'asset]  
-
-2. **[Nom de l'asset 2]**  
-   - **Auteur** : [Auteur de l'asset]  
-   - **Lien** : [URL de l'asset]  
-
-3. *(Ajoute ici tous les autres assets que tu utilises)*
+   - **Auteur** : Mena
+   - **Lien** : https://assetstore.unity.com/publishers/35682
 
 ---
 
