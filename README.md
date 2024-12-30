@@ -17,9 +17,9 @@ Un jeu réalisé en utilisant Unity, avec pour objectif de fournir une expérien
 ## 📦 Assets utilisés
 Voici les assets utilisés dans ce projet :
 
-1. **[Nom de l'asset 1]**  
+1. **ARCADE: FREE Racing Car**  
    - **Auteur** : Mena
-   - **Lien** : https://assetstore.unity.com/publishers/35682
+   - **Lien** : [Lien URL](https://assetstore.unity.com/packages/3d/vehicles/land/arcade-free-racing-car-161085)
 
 ---
 
