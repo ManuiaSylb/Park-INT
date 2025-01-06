@@ -26,7 +26,7 @@ Voici les assets utilisés dans ce projet :
 
 1. **ARCADE: FREE Racing Car**  
    - **Auteur** : Mena
-   - [**Lien**](https://assetstore.unity.com/packages/3d/vehicles/land/arcade-free-racing-car-161085
+   - [**Lien**](https://assetstore.unity.com/packages/3d/vehicles/land/arcade-free-racing-car-161085)
 
 2. **Concrete Layers 02**  
    - **Auteur** : Rob Tuyel
