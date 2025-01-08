@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     public float minRadius = 5f;
     public float maxRadius = 10f;
 
-    private float currentVerticalAngle = 10f;
+    private float currentVerticalAngle = 20f;
     private float currentHorizontalAngle = 180f;
 
     void Start()
