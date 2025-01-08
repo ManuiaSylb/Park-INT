@@ -5,36 +5,31 @@ public class CarController : MonoBehaviour
     private float horizontalInput, verticalInput;
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
+    private float reverseDelayTimer = 0f;
+    private bool isReversing = false;
 
-    // Settings
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle;
+    [SerializeField] private float motorForce, breakForce, maxSteerAngle, reverseDelay = 0.5f;
 
-    // Wheel Colliders
     private WheelCollider frontLeftWheelCollider, frontRightWheelCollider;
     private WheelCollider rearLeftWheelCollider, rearRightWheelCollider;
 
-    // Wheels (Transforms)
     private Transform frontLeftWheelTransform, frontRightWheelTransform;
     private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
-    // Rigidbody (pour gérer la vitesse)
     private Rigidbody carRigidbody;
 
     private void Awake()
     {
-        // Localiser les Wheel Colliders dans la hiérarchie
         frontLeftWheelCollider = transform.Find("Wheels/Colliders/FrontLeftWheel").GetComponent<WheelCollider>();
         frontRightWheelCollider = transform.Find("Wheels/Colliders/FrontRightWheel").GetComponent<WheelCollider>();
         rearLeftWheelCollider = transform.Find("Wheels/Colliders/RearLeftWheel").GetComponent<WheelCollider>();
         rearRightWheelCollider = transform.Find("Wheels/Colliders/RearRightWheel").GetComponent<WheelCollider>();
 
-        // Localiser les Transforms des meshes des roues
         frontLeftWheelTransform = transform.Find("Wheels/Meshes/FrontLeftWheel");
         frontRightWheelTransform = transform.Find("Wheels/Meshes/FrontRightWheel");
         rearLeftWheelTransform = transform.Find("Wheels/Meshes/RearLeftWheel");
         rearRightWheelTransform = transform.Find("Wheels/Meshes/RearRightWheel");
 
-        // Récupérer le Rigidbody
         carRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -51,30 +46,35 @@ public class CarController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        // Calculer la vitesse longitudinale (positive si le véhicule avance, négative si le véhicule recule)
         float forwardSpeed = Vector3.Dot(carRigidbody.velocity, transform.forward);
 
-        // Le freinage se produit uniquement si le joueur appuie sur "flèche arrière" (verticalInput < 0)
-        // et que le véhicule se déplace vers l'avant (forwardSpeed > 0).
-        isBreaking = (verticalInput < 0 && forwardSpeed > 0.1f) || Input.GetKey(KeyCode.Space);
+        if ((verticalInput < 0 && forwardSpeed > 0.1f) || (verticalInput > 0 && forwardSpeed < -0.1f))
+        {
+            isReversing = true;
+            reverseDelayTimer = reverseDelay;
+        }
+
+        if (isReversing)
+        {
+            reverseDelayTimer -= Time.fixedDeltaTime;
+            if (reverseDelayTimer <= 0f)
+                isReversing = false;
+        }
+
+        isBreaking = isReversing || Input.GetKey(KeyCode.Space);
     }
 
     private void HandleMotor()
     {
-        if (verticalInput > 0) // Accélération normale
-        {
-            ApplyMotorTorque(verticalInput * motorForce);
-            currentbreakForce = 0f;
-        }
-        else if (isBreaking) // Freinage
+        if (isBreaking)
         {
             currentbreakForce = breakForce;
-            ApplyMotorTorque(0f); // Pas de couple moteur pendant le freinage
+            ApplyMotorTorque(0f);
         }
-        else // Marche arrière (quand vitesse est nulle ou proche de zéro)
+        else
         {
             currentbreakForce = 0f;
-            ApplyMotorTorque(verticalInput * motorForce); // Appliquer un couple négatif pour reculer
+            ApplyMotorTorque(verticalInput * motorForce);
         }
 
         ApplyBreaking();

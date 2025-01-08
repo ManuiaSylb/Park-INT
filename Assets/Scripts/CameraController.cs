@@ -1,24 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     public Transform car;
+    public float rotationSpeed = 1000f;
+    public float verticalLimit = 89f;
     public float radius = 5f;
-    public float rotationSpeed = 100f;
-    public float verticalLimit = 90f;
+    public float hemisphereYOffset = 1f;
+    public float scrollSpeed = 1f;
+    public float minRadius = 5f;
+    public float maxRadius = 10f;
 
-    private float currentVerticalAngle = 30f;
-    private float currentHorizontalAngle = 0f;
+    private float currentVerticalAngle = 10f;
+    private float currentHorizontalAngle = 180f;
 
     void Start()
     {
-        transform.position = new Vector3(0, 3f, -5f);
-        transform.rotation = Quaternion.Euler(30f, 0f, 0f);
+        UpdateCameraPosition();
     }
 
     void Update()
+    {
+        HandleMouseInput();
+        UpdateCameraPosition();
+    }
+
+    private void HandleMouseInput()
     {
         if (Input.GetMouseButton(1))
         {
@@ -28,13 +35,24 @@ public class CameraController : MonoBehaviour
             currentHorizontalAngle += mouseX * rotationSpeed * Time.deltaTime;
             currentVerticalAngle -= mouseY * rotationSpeed * Time.deltaTime;
 
-            currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -verticalLimit, verticalLimit);
-
-            Quaternion rotation = Quaternion.Euler(currentVerticalAngle, currentHorizontalAngle, 0);
-            Vector3 position = car.position + rotation * new Vector3(0, 0, -radius);
-
-            transform.position = position;
-            transform.LookAt(car);
+            currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, 0f, verticalLimit);
         }
+
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0)
+        {
+            radius -= scrollInput * scrollSpeed;
+            radius = Mathf.Clamp(radius, minRadius, maxRadius);
+        }
+    }
+
+    private void UpdateCameraPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(currentVerticalAngle, currentHorizontalAngle, 0);
+        Vector3 offset = rotation * new Vector3(0, 0, -radius);
+        Vector3 orbitCenter = car.position + new Vector3(0, hemisphereYOffset, 0);
+
+        transform.position = orbitCenter + offset;
+        transform.LookAt(orbitCenter);
     }
 }

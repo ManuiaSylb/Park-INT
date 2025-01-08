@@ -415,7 +415,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1664042647}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       insertIndex: -1
@@ -438,9 +441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2517b900d7cd94c11bb21626bd676818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1000
+  motorForce: 100
   breakForce: 3000
   maxSteerAngle: 30
+  reverseDelay: 1
 --- !u!4 &872413108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
@@ -554,12 +558,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664042644}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99474835, z: -0.102351055, w: 0}
-  m_LocalPosition: {x: 0, y: 2.62, z: 16.03}
+  m_LocalRotation: {x: 0.102351055, y: -0, z: -0, w: 0.99474835}
+  m_LocalPosition: {x: 0, y: 2.62, z: -5.160001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 872413108}
   m_LocalEulerAnglesHint: {x: 11.749, y: 180, z: 0}
 --- !u!114 &1664042648
 MonoBehaviour:
@@ -574,9 +578,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 872413108}
-  radius: 5
   rotationSpeed: 1000
-  verticalLimit: 90
+  verticalLimit: 89
+  radius: 5
+  hemisphereYOffset: 1
+  scrollSpeed: 1
+  minRadius: 5
+  maxRadius: 10
 --- !u!1 &1862237948
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,4 +784,3 @@ SceneRoots:
   - {fileID: 872413104}
   - {fileID: 713882140}
   - {fileID: 2145248048}
-  - {fileID: 1664042647}
