@@ -394,6 +394,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1042801323994665371, guid: be5a8f5d65d4248c2a77825f439d106e, type: 3}
+--- !u!146 &950694561 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 8735547816155360346, guid: 472846a2eff564ad48091921a1cb3d8e, type: 3}
+  m_PrefabInstance: {fileID: 6878085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!146 &1141530831 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 3826018669647092968, guid: 472846a2eff564ad48091921a1cb3d8e, type: 3}
+  m_PrefabInstance: {fileID: 6878085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1465556547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -468,11 +478,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 7106874590903613791, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
+      propertyPath: rearLeftWheelCollider
+      value: 
+      objectReference: {fileID: 2140752598}
+    - target: {fileID: 7106874590903613791, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
+      propertyPath: frontLeftWheelCollider
+      value: 
+      objectReference: {fileID: 1860306552}
+    - target: {fileID: 7106874590903613791, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
+      propertyPath: rearRightWheelCollider
+      value: 
+      objectReference: {fileID: 950694561}
+    - target: {fileID: 7106874590903613791, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
+      propertyPath: frontRightWheelCollider
+      value: 
+      objectReference: {fileID: 1141530831}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
+--- !u!146 &1860306552 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 5919085913419992591, guid: 472846a2eff564ad48091921a1cb3d8e, type: 3}
+  m_PrefabInstance: {fileID: 6878085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1862237948
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +598,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!146 &2140752598 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 6642857770928356221, guid: 472846a2eff564ad48091921a1cb3d8e, type: 3}
+  m_PrefabInstance: {fileID: 6878085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145248044
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ParkingZone : MonoBehaviour
 {
-    public WheelCollider frontLeftWheelCollider;  // Référence au WheelCollider avant gauche
-    public WheelCollider frontRightWheelCollider; // Référence au WheelCollider avant droit
-    public WheelCollider rearLeftWheelCollider;   // Référence au WheelCollider arrière gauche
-    public WheelCollider rearRightWheelCollider;  // Référence au WheelCollider arrière droit
+    public WheelCollider frontLeftWheelCollider;  
+    public WheelCollider frontRightWheelCollider; 
+    public WheelCollider rearLeftWheelCollider;   
+    public WheelCollider rearRightWheelCollider; 
     public float timeToComplete = 3f;
     private float timer = 0f;
     private bool isFullyInZone = false;
@@ -19,12 +19,12 @@ public class ParkingZone : MonoBehaviour
             if (timer >= timeToComplete)
             {
                 Debug.Log("Bien joué");
-                isFullyInZone = false;  // Réinitialiser pour ne pas afficher plusieurs fois
+                isFullyInZone = false;  
             }
         }
         else
         {
-            timer = 0f;  // Réinitialiser le timer si la voiture n'est pas complètement dans la zone
+            timer = 0f;  
         }
     }
 
@@ -53,22 +53,22 @@ public class ParkingZone : MonoBehaviour
         if (!IsWheelInsideTrigger(rearLeftWheelCollider)) return false;
         if (!IsWheelInsideTrigger(rearRightWheelCollider)) return false;
 
-        return true;  // Toutes les roues sont à l'intérieur du trigger
+        return true;  
     }
 
     private bool IsWheelInsideTrigger(WheelCollider wheel)
     {
         Vector3 wheelPosition = wheel.transform.position;
-        Collider[] hitColliders = Physics.OverlapSphere(wheelPosition, wheel.radius);  // Vérifie la position de la roue avec un rayon
+        Collider[] hitColliders = Physics.OverlapSphere(wheelPosition, wheel.radius);  
 
         foreach (Collider hitCollider in hitColliders)
         {
             if (hitCollider == this.GetComponent<Collider>())
             {
-                return true;  // La roue est à l'intérieur du trigger
+                return true;  
             }
         }
 
-        return false;  // La roue n'est pas dans la zone
+        return false;  
     }
 }

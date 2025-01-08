@@ -12,17 +12,28 @@ public class CameraController : MonoBehaviour
     public float maxRadius = 10f;
 
     private float currentVerticalAngle = 20f;
-    private float currentHorizontalAngle = 180f;
+    private float currentHorizontalAngle = 0f;
+
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
     void Start()
     {
         UpdateCameraPosition();
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+        
     }
 
     void Update()
     {
         HandleMouseInput();
         UpdateCameraPosition();
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            ResetCameraPosition();
+        }
     }
 
     private void HandleMouseInput()
@@ -48,11 +59,24 @@ public class CameraController : MonoBehaviour
 
     private void UpdateCameraPosition()
     {
+        Quaternion carRotation = car.rotation;
+
         Quaternion rotation = Quaternion.Euler(currentVerticalAngle, currentHorizontalAngle, 0);
         Vector3 offset = rotation * new Vector3(0, 0, -radius);
         Vector3 orbitCenter = car.position + new Vector3(0, hemisphereYOffset, 0);
 
-        transform.position = orbitCenter + offset;
+        transform.position = orbitCenter + carRotation * offset;
         transform.LookAt(orbitCenter);
+    }
+
+    private void ResetCameraPosition()
+    {
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+
+        currentHorizontalAngle = 0f;
+        currentVerticalAngle = 20f;
+
+        UpdateCameraPosition();
     }
 }
