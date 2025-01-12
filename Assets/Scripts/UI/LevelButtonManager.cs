@@ -11,7 +11,6 @@ public class LevelButtonController : MonoBehaviour
     
     public bool isLevelUnlocked = false;  
     public bool isLevelValidated = false; 
-    public LevelButtonController previousLevelButton; 
 
     void Start()
     {
@@ -44,11 +43,8 @@ public class LevelButtonController : MonoBehaviour
 
     public void UnlockLevel()
     {
-        if (previousLevelButton != null && previousLevelButton.isLevelValidated)
-        {
-            isLevelUnlocked = true;
-            UpdateButtonState();
-        }
+        isLevelUnlocked = true;
+        UpdateButtonState();
     }
 
 

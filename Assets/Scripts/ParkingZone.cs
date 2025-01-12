@@ -1,14 +1,24 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ParkingZone : MonoBehaviour
 {
-    public WheelCollider frontLeftWheelCollider;  
-    public WheelCollider frontRightWheelCollider; 
-    public WheelCollider rearLeftWheelCollider;   
-    public WheelCollider rearRightWheelCollider; 
-    public float timeToComplete = 3f;
-    private float timer = 0f;
+    public WheelCollider frontLeftWheelCollider;
+    public WheelCollider frontRightWheelCollider;
+    public WheelCollider rearLeftWheelCollider;
+    public WheelCollider rearRightWheelCollider;
+
+    public int currentLevel;
+    public LevelButtonController levelButtonController; 
+
     private bool isFullyInZone = false;
+    private float timer = 0f;
+    private const float requiredTimeInZone = 2f;
+
+    void Start()
+    {
+        currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
+    }
 
     void Update()
     {
@@ -16,15 +26,14 @@ public class ParkingZone : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer >= timeToComplete)
+            if (timer >= requiredTimeInZone)
             {
-                Debug.Log("Bien joué");
-                isFullyInZone = false;  
+                ValidateLevel();
             }
         }
         else
         {
-            timer = 0f;  
+            timer = 0f;
         }
     }
 
@@ -53,22 +62,33 @@ public class ParkingZone : MonoBehaviour
         if (!IsWheelInsideTrigger(rearLeftWheelCollider)) return false;
         if (!IsWheelInsideTrigger(rearRightWheelCollider)) return false;
 
-        return true;  
+        return true;
     }
 
     private bool IsWheelInsideTrigger(WheelCollider wheel)
     {
         Vector3 wheelPosition = wheel.transform.position;
-        Collider[] hitColliders = Physics.OverlapSphere(wheelPosition, wheel.radius);  
+        Collider[] hitColliders = Physics.OverlapSphere(wheelPosition, wheel.radius);
 
         foreach (Collider hitCollider in hitColliders)
         {
             if (hitCollider == this.GetComponent<Collider>())
             {
-                return true;  
+                return true;
             }
         }
 
-        return false;  
+        return false;
+    }
+
+    private void ValidateLevel()
+    {
+        PlayerPrefs.SetInt("Level" + currentLevel + "Validated", 1);
+        PlayerPrefs.Save();
+
+        if (levelButtonController != null)
+        {
+            levelButtonController.ValidateLevel();
+        }
     }
 }

@@ -8,49 +8,73 @@ public class LevelMenuController : MonoBehaviour
     public LevelButtonController level3Button;
 
     void Start()
-    {
-        level1Button.isLevelUnlocked = true;
-        level1Button.UpdateButtonState();
+    {   
+        if (!PlayerPrefs.HasKey("Level1Validated"))
+        {
+            PlayerPrefs.SetInt("Level1Validated", 0);
+            PlayerPrefs.Save();
 
-        level2Button.previousLevelButton = level1Button;
-        level3Button.previousLevelButton = level2Button;
-        
+        }
+
+        if (!PlayerPrefs.HasKey("Level2Validated"))
+        {
+            PlayerPrefs.SetInt("Level2Validated", 0);
+            PlayerPrefs.Save();
+        }
+
+        if (!PlayerPrefs.HasKey("Level3Validated"))
+        {
+            PlayerPrefs.SetInt("Level3Validated", 0);
+            PlayerPrefs.Save();
+        }
+
         level1Button.UnlockLevel();
     }
 
-    public void ValidateLevel1()
+    public void Update()
     {
-        level1Button.ValidateLevel();
-        level2Button.UnlockLevel();
+        Debug.Log(PlayerPrefs.GetInt("Level1Validated"));
+        if (PlayerPrefs.GetInt("Level1Validated") == 1)
+        {
+            level1Button.ValidateLevel();
+            level2Button.UnlockLevel();
+        }
+        if (PlayerPrefs.GetInt("Level2Validated") == 1)
+        {
+            level2Button.ValidateLevel();
+            level3Button.UnlockLevel();
+        }
+        if (PlayerPrefs.GetInt("Level3Validated") == 1)
+        {
+            level3Button.ValidateLevel();
+        }
     }
 
-    public void ValidateLevel2()
+    public void Level1()
     {
-        level2Button.ValidateLevel();
-        level3Button.UnlockLevel();
+        SceneManager.LoadScene(2); 
     }
 
-    public void ValidateLevel3()
+    public void Level2()
     {
-        level3Button.ValidateLevel();
+        SceneManager.LoadScene(3); 
     }
 
-        public void Level1()
+    public void Level3()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4); 
     }
 
-        public void Level2()
+    public void MainMenu()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0); 
     }
 
-        public void Level3()
+    void OnApplicationQuit()
     {
-        SceneManager.LoadScene(4);
-    }
-            public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
+        PlayerPrefs.SetInt("Level1Validated", 0);
+        PlayerPrefs.SetInt("Level2Validated", 0);
+        PlayerPrefs.SetInt("Level3Validated", 0);
+        PlayerPrefs.Save();
     }
 }
