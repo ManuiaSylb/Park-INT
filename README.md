@@ -31,10 +31,12 @@ Voici les assets utilisés dans ce projet :
 2. **Concrete Layers 02**  
    - **Auteur** : Rob Tuyel
    - [**Lien**](https://polyhaven.com/a/concrete_layers_02)
+   
+3. **Road Cone**  
+   - **Auteur** : Emil Gilmutdinov
+   - [**Lien**](https://skfb.ly/psBPp)
 
 ---
 
-## 🚀 Comment exécuter
-1. Cloner ce dépôt :
-   ```bash
-   git clone https://github.com/ManuiaSylb/Park-INT.git
+## 🚀 Fonctionnement et règles du jeu
+
