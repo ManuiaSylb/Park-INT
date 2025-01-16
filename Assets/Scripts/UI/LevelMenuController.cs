@@ -28,12 +28,30 @@ public class LevelMenuController : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        if (!PlayerPrefs.HasKey("Level1Score"))
+        {
+            PlayerPrefs.SetInt("Level1Score", 0);
+            PlayerPrefs.Save();
+
+        }
+
+        if (!PlayerPrefs.HasKey("Level2Score"))
+        {
+            PlayerPrefs.SetInt("Level2Score", 0);
+            PlayerPrefs.Save();
+        }
+
+        if (!PlayerPrefs.HasKey("Level3Score"))
+        {
+            PlayerPrefs.SetInt("Level3Score", 0);
+            PlayerPrefs.Save();
+        }
+
         level1Button.UnlockLevel();
     }
 
     public void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("Level1Validated"));
         if (PlayerPrefs.GetInt("Level1Validated") == 1)
         {
             level1Button.ValidateLevel();
@@ -75,6 +93,9 @@ public class LevelMenuController : MonoBehaviour
         PlayerPrefs.SetInt("Level1Validated", 0);
         PlayerPrefs.SetInt("Level2Validated", 0);
         PlayerPrefs.SetInt("Level3Validated", 0);
+        PlayerPrefs.SetInt("Level1Score", 0);
+        PlayerPrefs.SetInt("Level2Score", 0);
+        PlayerPrefs.SetInt("Level3Score", 0);
         PlayerPrefs.Save();
     }
 }

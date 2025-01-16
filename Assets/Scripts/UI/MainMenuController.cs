@@ -18,6 +18,9 @@ public class MainMenuController : MonoBehaviour
         PlayerPrefs.SetInt("Level1Validated", 0);
         PlayerPrefs.SetInt("Level2Validated", 0);
         PlayerPrefs.SetInt("Level3Validated", 0);
+        PlayerPrefs.SetInt("Level1Score", 0);
+        PlayerPrefs.SetInt("Level2Score", 0);
+        PlayerPrefs.SetInt("Level3Score", 0);
         PlayerPrefs.Save();
         Application.Quit();
 

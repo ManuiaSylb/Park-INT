@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform car;
-    public float rotationSpeed = 1000f;
+    public float rotationSpeed = 2000f;
     public float verticalLimit = 89f;
     public float radius = 5f;
     public float hemisphereYOffset = 1f;

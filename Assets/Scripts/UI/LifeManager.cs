@@ -9,12 +9,11 @@ public class LifeManager : MonoBehaviour
     public GameObject Canvas_1;
     public GameObject Canvas_2;
     public GameObject Canvas_3;
-    public GameObject Canvas_4;
+    
 
     void Start()
     {
         Canvas_3.SetActive(false);
-        Canvas_4.SetActive(false);
     }
 
     void Update()
