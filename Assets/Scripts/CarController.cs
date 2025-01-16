@@ -118,11 +118,5 @@ public class CarController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
-        {
-            Debug.Log("Perdu");
-        }
-    }
+
 }

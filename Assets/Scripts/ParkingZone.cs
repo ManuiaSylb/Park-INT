@@ -14,10 +14,19 @@ public class ParkingZone : MonoBehaviour
     private bool isFullyInZone = false;
     private float timer = 0f;
     private const float requiredTimeInZone = 2f;
+    public GameObject Canvas_0;
+    public GameObject Canvas_1;
+    public GameObject Canvas_2;
+    public GameObject Canvas_3;
+    public GameObject Canvas_4;
+
 
     void Start()
     {
         currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
+
+        Canvas_4.SetActive(false);
+
     }
 
     void Update()
@@ -29,6 +38,12 @@ public class ParkingZone : MonoBehaviour
             if (timer >= requiredTimeInZone)
             {
                 ValidateLevel();
+                Time.timeScale = 0f;
+                Canvas_0.SetActive(false);
+                Canvas_1.SetActive(false);
+                Canvas_2.SetActive(false);
+                Canvas_3.SetActive(false);
+                Canvas_4.SetActive(true);
             }
         }
         else

@@ -8,6 +8,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Help()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void ExitGame()
     {
         PlayerPrefs.SetInt("Level1Validated", 0);

@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1438483903, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  m_Sprite: {fileID: -1742717880, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -344,12 +344,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelButton: {fileID: 257373009}
   buttonImage: {fileID: 257373010}
-  lockedSprite: {fileID: -1438483903, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  unlockedSprite: {fileID: -1438483903, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  validatedSprite: {fileID: -1308499837, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  lockedSprite: {fileID: -1742717880, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  unlockedSprite: {fileID: -1742717880, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  validatedSprite: {fileID: -1202423233, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   isLevelUnlocked: 0
   isLevelValidated: 0
-  previousLevelButton: {fileID: 0}
 --- !u!1 &337596566
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 697589302, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  m_Sprite: {fileID: 1630235649, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -589,12 +588,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelButton: {fileID: 445821558}
   buttonImage: {fileID: 445821559}
-  lockedSprite: {fileID: 697589302, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  unlockedSprite: {fileID: 697589302, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  validatedSprite: {fileID: -1924101972, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  lockedSprite: {fileID: 1630235649, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  unlockedSprite: {fileID: 1630235649, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  validatedSprite: {fileID: 1567061984, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   isLevelUnlocked: 0
   isLevelValidated: 0
-  previousLevelButton: {fileID: 0}
 --- !u!1 &588711444
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -351109120, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  m_Sprite: {fileID: 1524776709, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -944,7 +942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -381641919, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  m_Sprite: {fileID: 128432748, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -976,12 +974,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelButton: {fileID: 894863124}
   buttonImage: {fileID: 894863125}
-  lockedSprite: {fileID: -381641919, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  unlockedSprite: {fileID: -381641919, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
-  validatedSprite: {fileID: -1970024435, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  lockedSprite: {fileID: 128432748, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  unlockedSprite: {fileID: 128432748, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  validatedSprite: {fileID: -546962501, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   isLevelUnlocked: 0
   isLevelValidated: 0
-  previousLevelButton: {fileID: 0}
 --- !u!1 &1658959296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1744919683, guid: c8e1ab1806bbb42578cd14951e957502, type: 3}
+  m_Sprite: {fileID: -1301606925, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
