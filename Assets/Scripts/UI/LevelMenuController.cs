@@ -6,9 +6,15 @@ public class LevelMenuController : MonoBehaviour
     public LevelButtonController level1Button;
     public LevelButtonController level2Button;
     public LevelButtonController level3Button;
+    public GameObject Canvas_0;
+    public GameObject Canvas_1;
+    public GameObject Canvas_2;
 
     void Start()
     {   
+        Canvas_0.SetActive(true);
+        Canvas_1.SetActive(true);
+        Canvas_2.SetActive(false);
         if (!PlayerPrefs.HasKey("Level1Validated"))
         {
             PlayerPrefs.SetInt("Level1Validated", 0);
@@ -86,6 +92,20 @@ public class LevelMenuController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0); 
+    }
+
+    public void ShowSettingsMenu()
+    {
+        Canvas_0.SetActive(true);
+        Canvas_1.SetActive(false);
+        Canvas_2.SetActive(true);
+    }
+
+    public void CloseSettingsMenu()
+    {
+        Canvas_0.SetActive(true);
+        Canvas_1.SetActive(true);
+        Canvas_2.SetActive(false);
     }
 
     void OnApplicationQuit()

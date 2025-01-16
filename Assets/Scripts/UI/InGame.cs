@@ -21,7 +21,8 @@ public class InGame : MonoBehaviour
     private void Update()
     {
         if (Time.timeScale > 0f)
-        {
+        {   
+            Debug.Log(chrono);
             chrono += Time.deltaTime;
         }
     }
