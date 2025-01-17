@@ -2121,6 +2121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6dd51a82495d4bd4870cb91cd26d6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starsSprites:
+  - {fileID: 21300000, guid: 01630f1bad7e8421085e36d2710dc1e6, type: 3}
+  - {fileID: 21300000, guid: 08f8e4830fa484557b7aee1e72ba95a8, type: 3}
+  - {fileID: 21300000, guid: 143f197eea3cc49008e7e3f1e90d6028, type: 3}
+  - {fileID: 21300000, guid: aa3f7272bac5d47eab1842c482b9e27f, type: 3}
 --- !u!1 &1798566753
 GameObject:
   m_ObjectHideFlags: 0

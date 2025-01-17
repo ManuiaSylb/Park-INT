@@ -2845,7 +2845,7 @@ GameObject:
   - component: {fileID: 1127392052}
   - component: {fileID: 1127392051}
   m_Layer: 5
-  m_Name: NextButton
+  m_Name: LevelsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,7 +2946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -522153583, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  m_Sprite: {fileID: 1092055402, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3651,7 +3651,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4366360553374201556, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.223
       objectReference: {fileID: 0}
     - target: {fileID: 4366360553374201556, guid: 6837dd9bd84ce4993bb7a6451fd147f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3921,7 +3921,7 @@ GameObject:
   - component: {fileID: 1710882005}
   - component: {fileID: 1710882004}
   m_Layer: 5
-  m_Name: MainMenuButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3992,7 +3992,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2142537880}
         m_TargetAssemblyTypeName: InGame, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: Next
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4022,7 +4022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1524776709, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
+  m_Sprite: {fileID: -522153583, guid: ff591b47883a94a6d80c1a702db085ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

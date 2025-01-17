@@ -42,6 +42,7 @@ public class MainMenuController : MonoBehaviour
 
     public void CloseHelp(){
         Canvas_1.SetActive(true);
+        Canvas_4.SetActive(false);
         Canvas_3.SetActive(false);
     }
 
