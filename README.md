@@ -36,7 +36,5 @@ Voici les assets utilisés dans ce projet :
    - **Auteur** : Emil Gilmutdinov
    - [**Lien**](https://skfb.ly/psBPp)
 
----
 
-## 🚀 Fonctionnement et règles du jeu
 
