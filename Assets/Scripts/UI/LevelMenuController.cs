@@ -9,9 +9,11 @@ public class LevelMenuController : MonoBehaviour
     public GameObject Canvas_0;
     public GameObject Canvas_1;
     public GameObject Canvas_2;
+    public AudioSource ClickSound;
 
     void Start()
     {   
+        ClickSound.Play();
         Canvas_0.SetActive(true);
         Canvas_1.SetActive(true);
         Canvas_2.SetActive(false);
@@ -76,7 +78,7 @@ public class LevelMenuController : MonoBehaviour
 
     public void Level1()
     {
-        SceneManager.LoadScene(2); 
+        SceneManager.LoadScene(2);
     }
 
     public void Level2()
@@ -91,7 +93,7 @@ public class LevelMenuController : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0); 
+        SceneManager.LoadScene(0);
     }
 
     public void ShowSettingsMenu()
@@ -99,6 +101,8 @@ public class LevelMenuController : MonoBehaviour
         Canvas_0.SetActive(true);
         Canvas_1.SetActive(false);
         Canvas_2.SetActive(true);
+        ClickSound.Play();
+
     }
 
     public void CloseSettingsMenu()
@@ -106,6 +110,7 @@ public class LevelMenuController : MonoBehaviour
         Canvas_0.SetActive(true);
         Canvas_1.SetActive(true);
         Canvas_2.SetActive(false);
+        ClickSound.Play();
     }
 
     void OnApplicationQuit()

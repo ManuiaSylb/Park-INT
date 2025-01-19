@@ -6,11 +6,13 @@ public class InGame : MonoBehaviour
     public GameObject Canvas_0;
     public GameObject Canvas_1;
     public GameObject Canvas_2;
+    public AudioSource ClickSound;
 
     private float chrono;
 
     private void Start()
     {
+        ClickSound.Play();
         Time.timeScale = 1f;
         Canvas_0.SetActive(true);
         Canvas_1.SetActive(false);
@@ -22,7 +24,6 @@ public class InGame : MonoBehaviour
     {
         if (Time.timeScale > 0f)
         {   
-            Debug.Log(chrono);
             chrono += Time.deltaTime;
         }
     }
@@ -32,6 +33,7 @@ public class InGame : MonoBehaviour
         Canvas_0.SetActive(false);
         Canvas_1.SetActive(true);
         Time.timeScale = 0f;
+        ClickSound.Play();
     }
 
     public void ResumeGame()
@@ -39,18 +41,21 @@ public class InGame : MonoBehaviour
         Canvas_1.SetActive(false);
         Canvas_0.SetActive(true);
         Time.timeScale = 1f;
+        ClickSound.Play();
     }
 
     public void ShowSettingsMenu()
     {
         Canvas_1.SetActive(false);
         Canvas_2.SetActive(true);
+        ClickSound.Play();
     }
 
     public void CloseSettingsMenu()
     {
         Canvas_2.SetActive(false);
         Canvas_1.SetActive(true);
+        ClickSound.Play();
     }
 
     public void RestartGame()
@@ -68,7 +73,7 @@ public class InGame : MonoBehaviour
     public void Next()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);    
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);  
     }
 
     public void LevelsMenu()

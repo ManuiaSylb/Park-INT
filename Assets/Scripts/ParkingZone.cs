@@ -20,7 +20,7 @@ public class ParkingZone : MonoBehaviour
     public GameObject Canvas_2;
     public GameObject Canvas_3;
     public GameObject Canvas_4;
-
+    public AudioSource WinSound;
     public StarsManager starsManager;
 
     void Start()
@@ -43,7 +43,7 @@ public class ParkingZone : MonoBehaviour
                 {
                     starsManager.Stars();
                 }
-
+                
                 Time.timeScale = 0f;
 
                 Canvas_0.SetActive(false);
@@ -51,6 +51,8 @@ public class ParkingZone : MonoBehaviour
                 Canvas_2.SetActive(false);
                 Canvas_3.SetActive(false);
                 Canvas_4.SetActive(true);
+                WinSound.Play();
+                timer = 0f;
             }
         }
         else

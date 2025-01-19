@@ -9,7 +9,9 @@ public class LifeManager : MonoBehaviour
     public GameObject Canvas_1;
     public GameObject Canvas_2;
     public GameObject Canvas_3;
-    
+    public AudioSource ImpactSound;
+    public AudioSource GameOverSound;
+
 
     void Start()
     {
@@ -26,9 +28,12 @@ public class LifeManager : MonoBehaviour
         {
             PV -= 20;
             hasCollided = true;
+            ImpactSound.Play();
+
 
             if (PV <= 0)
             {   
+                GameOverSound.Play();
                 Time.timeScale = 0f;
                 Canvas_0.SetActive(false);
                 Canvas_1.SetActive(false);

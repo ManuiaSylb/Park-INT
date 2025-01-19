@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject Canvas_2;
     public GameObject Canvas_3;
     public GameObject Canvas_4;
+    public AudioSource ClickSound;
 
     void Start()
     {   
@@ -17,6 +18,8 @@ public class MainMenuController : MonoBehaviour
         Canvas_2.SetActive(false);
         Canvas_3.SetActive(false);
         Canvas_4.SetActive(false);
+        ClickSound.Play();
+
     }
     public void PlayGame()
     {
@@ -27,34 +30,40 @@ public class MainMenuController : MonoBehaviour
     {
         Canvas_1.SetActive(false);
         Canvas_2.SetActive(true);
+        ClickSound.Play();
     }
 
     public void CloseSettingsMenu()
     {
         Canvas_1.SetActive(true);
         Canvas_2.SetActive(false);
+        ClickSound.Play();
     }
     
     public void Help(){
         Canvas_1.SetActive(false);
         Canvas_3.SetActive(true);
+        ClickSound.Play();
     }
 
     public void CloseHelp(){
         Canvas_1.SetActive(true);
         Canvas_4.SetActive(false);
         Canvas_3.SetActive(false);
+        ClickSound.Play();
     }
 
     public void Commands(){
         Canvas_3.SetActive(false);
         Canvas_4.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Rules(){
         Canvas_1.SetActive(false);
         Canvas_4.SetActive(false);
         Canvas_3.SetActive(true);
+        ClickSound.Play();
     }
 
     public void ExitGame()
